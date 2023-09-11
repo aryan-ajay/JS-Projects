@@ -1,0 +1,49 @@
+Include HTML, CSS and JavaScript
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>simple page</title>
+  <style>
+    body{
+      text-align: center;
+    }
+    .box{
+      height: 100vh;
+      width: 100%;
+      border: 1px solid black;
+      /* margin-left: 25rem; */
+      margin-top: 2rem;
+      font-size: 5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Generate a  Randome Color</h1>
+  <button>Generate color</button>
+  <div class="box">This is your new color</div>
+  <script>
+    let btn = document.querySelector('button');
+    let h1 = document.querySelector('h1');
+    let div = document.querySelector('div');
+    btn.addEventListener("click", function() {
+
+      let color = getRandomColor();
+      h1.innerHTML = color;
+      div.style.backgroundColor = color;
+    });
+
+    function getRandomColor() {
+      let red = Math.floor(Math.random() * 255);
+      let green = Math.floor(Math.random() *255);
+      let blue = Math.floor(Math.random() *255);
+
+      let finalColor = `rgb(${red}, ${green}, ${blue})`;
+      return finalColor;
+    }
+  </script>
+</body>
+</html>
